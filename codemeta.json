@@ -1,25 +1,30 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "description": "YOUR DESCRIPTION",
-  "name": "YOUR REPOSITORY NAME",
-  "codeRepository": "https://github.com/caltechlibrary/REPONAME",
-  "issueTracker": "https://github.com/caltechlibrary/REPONAME/issues",
-  "license": "https://github.com/caltechlibrary/REPONAME/blob/master/LICENSE",
-  "version": "1.0.0",
+  "description": "Convert and validate codemeta.",
+  "name": "convert_codemeta",
+  "codeRepository": "https://github.com/caltechlibrary/convert_codemeta",
+  "issueTracker": "https://github.com/caltechlibrary/convert_codemeta/issues",
+  "license": "https://data.caltech.edu/license",
+  "version": "0.0.1",
   "author": [
     {
       "@type": "Person",
-      "givenName": "FIRSTNAME",
-      "familyName": "LASTNAME",
-      "affiliation": "California Institute of Technology Library",
-      "email": "EMAIL",
-      "@id": "https://orcid.org/YOUR-ORCID"
-    }],
-  "developmentStatus": "active",
-  "downloadUrl": "https://github.com/caltechlibrary/REPONAME/archive/1.0.0.zip",
-  "keywords": [
-    "software",
+      "givenName": "Thomas E",
+      "familyName": "Morrell",
+      "affiliation": "Caltech Library",
+      "email": "tmorrell@caltech.edu",
+      "@id": "https://orcid.org/0000-0001-9266-5146"
+    }
   ],
-  "maintainer": "https://orcid.org/YOUR-ORCID",
+  "developmentStatus": "active",
+  "downloadUrl":"https://github.com/caltechlibrary/convert_codemeta/archive/v0.0.1.zip",
+  "keywords": [
+    "GitHub",
+    "metadata",
+    "software",
+    "codemeta"
+  ],
+  "maintainer": "https://orcid.org/0000-0001-9266-5146",
+  "programmingLanguage": "Python"
 }
