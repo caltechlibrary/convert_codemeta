@@ -80,6 +80,6 @@ Workshop](http://asclnet.github.io/SWRegistryWorkshop). It is maintained by the 
 <div align="center">
   <br>
   <a href="https://www.caltech.edu">
-    <img width="100" height="100" src=".graphics/caltech-round.svg">
+    <img width="100" height="100" src=".graphics/caltech-round.png">
   </a>
 </div>
