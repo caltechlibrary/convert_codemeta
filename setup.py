@@ -58,7 +58,7 @@ setup(
         download_url = download,
         license = license,
         packages=find_packages(),
-        package_data={'convert_codemeta':['crosswalk.csv']},
+        package_data={'convert_codemeta':['crosswalk.csv','codemeta_schema.jsonld']},
         py_modules = ["convert_codemeta"],
         install_requires=read_requirements(),
         classifiers = [
