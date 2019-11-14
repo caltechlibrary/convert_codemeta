@@ -10,3 +10,12 @@ def test_basic_convert():
         result = validate_codemeta(codemeta)
         assert result == True
 
+def test_biotools_convert():
+    with open('tests/integron_finder.biotools.json') as infile:
+        data = json.load(infile)
+        codemeta = crosswalk(data,"bio.tools")
+        result = validate_codemeta(codemeta)
+        assert result == True
+        outfile = open('codemeta_biotools.json','w')
+        json.dump(codemeta,outfile)
+
