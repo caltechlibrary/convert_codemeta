@@ -4,18 +4,20 @@ import json
 
 
 def test_basic_convert():
-    with open('tests/package.json') as infile:
+    with open("tests/package.json") as infile:
         data = json.load(infile)
-        codemeta = crosswalk(data,"NodeJS")
+        codemeta = crosswalk(data, "NodeJS")
         result = validate_codemeta(codemeta)
         assert result == True
+
 
 def test_biotools_convert():
-    with open('tests/integron_finder.biotools.json') as infile:
+    with open("tests/integron_finder.biotools.json") as infile:
         data = json.load(infile)
-        codemeta = crosswalk(data,"bio.tools")
+        codemeta = crosswalk(data, "bio.tools")
         result = validate_codemeta(codemeta)
         assert result == True
-        outfile = open('codemeta_biotools.json','w')
-        json.dump(codemeta,outfile)
-
+        with open("tests/codemeta_biotools.json", "r") as compfile:
+            comp = json.load(compfile)
+            assert comp == codemeta
+        # json.dump(codemeta,outfile)
