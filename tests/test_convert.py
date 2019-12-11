@@ -17,6 +17,7 @@ def test_biotools_convert():
         codemeta = crosswalk(data, "bio.tools")
         result = validate_codemeta(codemeta)
         assert result == True
+        print(codemeta)
         with open("tests/codemeta_biotools.json", "r") as compfile:
             comp = json.load(compfile)
             assert comp == codemeta

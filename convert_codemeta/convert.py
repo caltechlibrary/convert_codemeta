@@ -9,22 +9,21 @@ def deep_get(dikt, path):
     Use a string separated by periods as the path to access
     values in a nested dictionary:
     deep_get(data, "data.files.0") == data["data"]["files"][0]
-    deep_get(data, "data.files") == data["data"]["files"][0]
+    deep_get(data, "data.files") == data["data"]["files"][]
     """
     value = dikt
     for component in path.split("."):
-        print("CHECK", value)
         if component.isdigit():
             value = value[int(component)]
         elif type(value) == list:
             new = []
             for v in value:
-                new.append(v[component])
+                if component in v:
+                    new.append(v[component])
             value = new
-            print(value)
         else:
-            value = value[component]
-    print(value)
+            if component in value:
+                value = value[component]
     return value
 
 
@@ -62,18 +61,27 @@ def get_crosswalk_context(table):
     return crosswalk
 
 
-def crosswalk(json, from_format, to_format="codemeta", trim=True):
+def add_bio_tools(json):
+    """Add additional fields that require logic for bio.tools"""
+    if "link" in json:
+        for l in json["link"]:
+            if l["type"] == "Repository":
+                json["schema:codeRepository"] = {"@id": l["url"]}
+
+
+def crosswalk(json, from_format, to_format="codemeta"):
     if to_format == "codemeta":
-        codemeta = "https://doi.org/10.5063/schema/codemeta-2.0"
+        codemeta_context = "https://doi.org/10.5063/schema/codemeta-2.0"
         table = crosswalk_table(from_format)
         context = get_crosswalk_context(table)
-        print(context)
         json["@context"] = context
-        expanded = jsonld.expand(copy.deepcopy(json))
         # Nested elements indicated by a . path need to be added manually
-        print(expanded)
         for key in context.keys():
             if "." in key:
-                print("KEY", key)
-                expanded[key] = deep_get(json, key)
-        return jsonld.compact(expanded, codemeta)
+                json[context[key]["@id"]] = deep_get(json, key)
+        #Elements from formats that need logic are added manually
+        if from_format == "bio.tools":
+            add_bio_tools(json)
+        expanded = jsonld.expand(json)
+        codemeta = jsonld.compact(expanded, codemeta_context)
+        return codemeta

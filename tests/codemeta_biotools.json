@@ -9,11 +9,14 @@
     "Mac"
   ],
   "keywords":[
-    "Nucleic acid feature detection",
-    "Sequence motif recognition",
-    "Protein feature detection",
-    "Genome annotation"
+    "Functional genomics",
+    "Mobile genetic elements",
+    "Molecular biology",
+    "Sequence analysis"   
   ],
+  "codeRepository": "https://github.com/gem-pasteur/Integron_Finder/",  
+  "programmingLanguage": "Python",
+  "schema:license": "GPL-3.0",
   "url": "https://github.com/gem-pasteur/Integron_Finder",
   "version": "1.5.1"
 }
