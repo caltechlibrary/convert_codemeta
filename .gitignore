@@ -66,6 +66,10 @@ TAGS
 __pycache__
 *.py[cod]
 *$py.class
+build/
+convert_codemeta.egg-info/
+dist/
+
 
 # InnoSetup-specific things to ignore:
 # .............................................................................

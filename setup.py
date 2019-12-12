@@ -1,9 +1,11 @@
-from setuptools import setup,find_packages
-
-import sys
+import io
 import os
-import shutil
-import json
+import glob
+import sys, json
+from shutil import rmtree
+
+from setuptools import find_packages, setup, Command
+
 
 def read(fname):
     with open(fname, mode = "r", encoding = "utf-8") as f:
@@ -48,6 +50,40 @@ download = meta['downloadUrl']
 license = meta['license']
 name = meta['name']
 
+here = os.path.abspath(os.path.dirname(__file__))
+
+class UploadCommand(Command):
+    """Support setup.py upload."""
+
+    description = "Build and publish the package."
+    user_options = []
+
+    @staticmethod
+    def status(s):
+        """Prints things in bold."""
+        print("\033[1m{0}\033[0m".format(s))
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        try:
+            self.status("Removing previous builds…")
+            rmtree(os.path.join(here, "dist"))
+        except OSError:
+            pass
+
+        self.status("Building Source and Wheel distribution…")
+        os.system("{0} setup.py sdist bdist_wheel ".format(sys.executable))
+
+        self.status("Uploading the package to PyPI via Twine…")
+        os.system("twine upload dist/*")
+
+        sys.exit()
+
 setup(
         name = name,
         version = version,
@@ -62,11 +98,11 @@ setup(
         py_modules = ["convert_codemeta"],
         install_requires=read_requirements(),
         classifiers = [
-        "Development Status :: Alpha",
-        "Environment :: Console",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License"
-    ]
+    ],
+    # $ setup.py publish support.
+    cmdclass={"upload": UploadCommand},
 )
 
