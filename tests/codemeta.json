@@ -1,5 +1,5 @@
 {
-  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@context": "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/master/codemeta.jsonld",
   "@type": "SoftwareSourceCode",
   "description": "A Shiny app that plots an up-to-date version of the total number of annotated proteins in genomes submitted to GenBank as a function of genome size (based on data provided by NCBI genome reports). The app stays up-to-date by retrieving data from the NCBI FTP server upon loading. Image on Wikipedia is a frozen version of one created by this app (using the Download SVG button).",
   "name": "genome_size_vs_protein_count",

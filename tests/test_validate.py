@@ -16,6 +16,7 @@ def test_junk(capsys):
         result = validate_codemeta(data)
         assert result == False
         captured = capsys.readouterr()
+        print(captured.out)
         assert (
             captured.out
             == "Unsupported terms in \

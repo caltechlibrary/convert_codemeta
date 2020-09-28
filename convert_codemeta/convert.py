@@ -71,7 +71,8 @@ def add_bio_tools(json):
 
 def crosswalk(json, from_format, to_format="codemeta"):
     if to_format == "codemeta":
-        codemeta_context = "https://doi.org/10.5063/schema/codemeta-2.0"
+        #codemeta_context = "https://doi.org/10.5063/schema/codemeta-2.0"
+        codemeta_context ='https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/master/codemeta.jsonld'
         table = crosswalk_table(from_format)
         context = get_crosswalk_context(table)
         json["@context"] = context
