@@ -1,1 +1,42 @@
-{"grants": "1144469", "creators": [{"orcid": "0000-0001-9701-3059", "affiliation": "Caltech", "name": "Saladi, Shyam M."}], "description": "A Shiny app that plots an up-to-date version of the total number of annotated proteins in genomes submitted to GenBank as a function of genome size (based on data provided by NCBI genome reports). The app stays up-to-date by retrieving data from the NCBI FTP server upon loading. Image on Wikipedia is a frozen version of one created by this app (using the Download SVG button).", "keywords": ["GitHub", "ncbi", "genomes", "genome-size", "Python", "Development Status: active"], "license": "https://spdx.org/licenses/MIT.html", "version": "1.0", "title": "genome_size_vs_protein_count", "relatedIdentifiers": [{"relation": "isSupplementTo", "identifier": "https://github.com/smsaladi/genome_size_vs_protein_count"}, {"relation": "isIdenticalTo", "identifier": "https://github.com/smsaladi/genome_size_vs_protein_count/archive/1.0.zip"}, {"relation": "isSupplementedBy", "identifier": "https://github.com/smsaladi/genome_size_vs_protein_count/issues"}], "contributors": [{"name": "National Science Foundation", "type": "Funder"}]}
+{
+  "grants": "1144469",
+  "creators": [
+    {
+      "orcid": "0000-0001-9701-3059",
+      "affiliation": "Caltech",
+      "name": "Saladi, Shyam M."
+    }
+  ],
+  "description": "A Shiny app that plots an up-to-date version of the total number of annotated proteins in genomes submitted to GenBank as a function of genome size (based on data provided by NCBI genome reports). The app stays up-to-date by retrieving data from the NCBI FTP server upon loading. Image on Wikipedia is a frozen version of one created by this app (using the Download SVG button).",
+  "keywords": [
+    "GitHub",
+    "ncbi",
+    "genomes",
+    "genome-size",
+    "Python",
+    "Development Status: active"
+  ],
+  "license": "https://spdx.org/licenses/MIT.html",
+  "version": "1.0",
+  "title": "genome_size_vs_protein_count",
+  "relatedIdentifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/smsaladi/genome_size_vs_protein_count"
+    },
+    {
+      "relation": "isIdenticalTo",
+      "identifier": "https://github.com/smsaladi/genome_size_vs_protein_count/archive/1.0.zip"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/smsaladi/genome_size_vs_protein_count/issues"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "National Science Foundation",
+      "type": "Funder"
+    }
+  ]
+}
