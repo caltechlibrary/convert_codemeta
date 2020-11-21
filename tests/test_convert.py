@@ -4,7 +4,7 @@ import json
 
 
 def test_basic_convert():
-    with open("package.json") as infile:
+    with open("tests/package.json") as infile:
         data = json.load(infile)
         codemeta = crosswalk(data, "NodeJS")
         result = validate_codemeta(codemeta)
@@ -12,24 +12,24 @@ def test_basic_convert():
 
 
 def test_biotools_convert():
-    with open("integron_finder.biotools.json") as infile:
+    with open("tests/integron_finder.biotools.json") as infile:
         data = json.load(infile)
         codemeta = crosswalk(data, "bio.tools")
         result = validate_codemeta(codemeta)
         assert result == True
-        with open("codemeta_biotools.json", "r") as compfile:
+        with open("tests/codemeta_biotools.json", "r") as compfile:
             comp = json.load(compfile)
             assert comp == codemeta
         # json.dump(codemeta,outfile)
 
 
 def test_zenodo_convert():
-    with open("codemeta.json") as infile:
+    with open("tests/codemeta.json") as infile:
         data = json.load(infile)
         result = validate_codemeta(data)
         assert result == True
         zenodo = crosswalk(data, "codemeta", "Zenodo")
-        with open("zenodo.json", "r") as compfile:
+        with open("tests/zenodo.json", "r") as compfile:
             comp = json.load(compfile)
             assert comp == zenodo
         # json.dump(codemeta,outfile)

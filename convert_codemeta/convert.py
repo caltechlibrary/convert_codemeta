@@ -164,7 +164,7 @@ def customize_zenodo(json):
 def crosswalk(json, from_format, to_format="codemeta"):
     if from_format == "codemeta":
         # codemeta_context = "https://doi.org/10.5063/schema/codemeta-2.0"
-        from_context = "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/master/codemeta.jsonld"
+        from_context = "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld"
     else:
         table = crosswalk_table(from_format)
         from_context = get_crosswalk_context(table)
@@ -174,7 +174,7 @@ def crosswalk(json, from_format, to_format="codemeta"):
                 json[from_context[key]["@id"]] = deep_get(json, key)
     if to_format == "codemeta":
         # codemeta_context = "https://doi.org/10.5063/schema/codemeta-2.0"
-        to_context = "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/master/codemeta.jsonld"
+        to_context = "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld"
     else:
         table = crosswalk_table(to_format)
         to_context = get_crosswalk_context(table)

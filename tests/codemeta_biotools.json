@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/master/codemeta.jsonld",
+  "@context": "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld",
   "developmentStatus": "Mature",
   "citation": {},
   "description": "A tool to detect Integron in DNA sequences.",

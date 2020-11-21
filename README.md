@@ -40,6 +40,12 @@ Usage
 
 Validate codemeta in a python script: `validate_codemeta(codemeta)`
 
+Convert to codemeta in a python script by providing the input format:
+`crosswalk(data, "bio.tools")`
+
+Convert from codemeta to a different format in a python script by providing both formats:
+`crosswalk(data, "codemeta", "Zenodo")`
+
 Run tests by typing `pytest tests`
 
 
