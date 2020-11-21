@@ -8,21 +8,23 @@ from setuptools import find_packages, setup, Command
 
 
 def read(fname):
-    with open(fname, mode = "r", encoding = "utf-8") as f:
+    with open(fname, mode="r", encoding="utf-8") as f:
         src = f.read()
     return src
 
+
 def read_requirements():
     """Parse requirements from requirements.txt."""
-    reqs_path = os.path.join('.', 'requirements.txt')
-    with open(reqs_path, 'r') as f:
+    reqs_path = os.path.join(".", "requirements.txt")
+    with open(reqs_path, "r") as f:
         requirements = [line.rstrip() for line in f]
     return requirements
+
 
 codemeta_json = "codemeta.json"
 
 # Let's pickup as much metadata as we need from codemeta.json
-with open(codemeta_json, mode = "r", encoding = "utf-8") as f:
+with open(codemeta_json, mode="r", encoding="utf-8") as f:
     src = f.read()
     meta = json.loads(src)
 
@@ -44,13 +46,14 @@ for obj in meta["author"]:
         author_email = email
     else:
         author_email = author_email + ", " + email
-description = meta['description']
-url = meta['codeRepository']
-download = meta['downloadUrl']
-license = meta['license']
-name = meta['name']
+description = meta["description"]
+url = meta["codeRepository"]
+download = meta["downloadUrl"]
+license = meta["license"]
+name = meta["name"]
 
 here = os.path.abspath(os.path.dirname(__file__))
+
 
 class UploadCommand(Command):
     """Support setup.py upload."""
@@ -84,25 +87,25 @@ class UploadCommand(Command):
 
         sys.exit()
 
+
 setup(
-        name = name,
-        version = version,
-        description = description,
-        author = author,
-        author_email = author_email,
-        url = url,
-        download_url = download,
-        license = license,
-        packages=find_packages(),
-        package_data={'convert_codemeta':['crosswalk.csv','codemeta_schema.jsonld']},
-        py_modules = ["convert_codemeta"],
-        install_requires=read_requirements(),
-        classifiers = [
+    name=name,
+    version=version,
+    description=description,
+    author=author,
+    author_email=author_email,
+    url=url,
+    download_url=download,
+    license=license,
+    packages=find_packages(),
+    package_data={"convert_codemeta": ["crosswalk.csv", "codemeta_schema.jsonld"]},
+    py_modules=["convert_codemeta"],
+    install_requires=read_requirements(),
+    classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: BSD License"
+        "License :: OSI Approved :: BSD License",
     ],
     # $ setup.py publish support.
     cmdclass={"upload": UploadCommand},
 )
-
