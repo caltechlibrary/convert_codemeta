@@ -55,4 +55,4 @@ jobs:
           docker-compose --version
       - name: Run tests
         run: |
-          ./run-tests.sh --check-pytest
+          bash run-tests.sh --check-pytest
