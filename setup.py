@@ -92,6 +92,11 @@ tests_require = [
     'pytest>=6.1.1',
 ]
 
+extras_require = {
+    'all': tests_require,
+    'tests': tests_require,
+}
+
 setup(
     name=name,
     version=version,
