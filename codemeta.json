@@ -6,7 +6,7 @@
     "codeRepository": "https://github.com/caltechlibrary/convert_codemeta",
     "issueTracker": "https://github.com/caltechlibrary/convert_codemeta/issues",
     "license": "https://data.caltech.edu/license",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "author": [
         {
             "@type": "Person",

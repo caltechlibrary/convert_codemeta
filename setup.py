@@ -111,6 +111,7 @@ setup(
     py_modules=["convert_codemeta"],
     install_requires=read_requirements(),
     tests_require=tests_require,
+    extras_require=extras_require,
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
