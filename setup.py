@@ -88,6 +88,10 @@ class UploadCommand(Command):
         sys.exit()
 
 
+tests_require = [
+    'pytest>=6.1.1',
+]
+
 setup(
     name=name,
     version=version,
@@ -101,6 +105,7 @@ setup(
     package_data={"convert_codemeta": ["crosswalk.csv", "codemeta_schema.jsonld"]},
     py_modules=["convert_codemeta"],
     install_requires=read_requirements(),
+    tests_require=tests_require,
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
