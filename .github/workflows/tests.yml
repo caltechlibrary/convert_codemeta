@@ -48,7 +48,6 @@ jobs:
           - services: lowest
             REQUIREMENTS: "lowest"
             REQUIREMENTS_LEVEL: "min"
-    env:
 
     steps:
       - name: Checkout
