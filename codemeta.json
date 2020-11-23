@@ -14,12 +14,12 @@
             "familyName": "Morrell",
             "affiliation": "Caltech Library",
             "email": "tmorrell@caltech.edu",
-            "@id": "https://orcid.org/0000-0001-9266-5146",
+            "@id": "https://orcid.org/0000-0001-9266-5146"
         }
     ],
     "developmentStatus": "active",
     "downloadUrl": "https://github.com/caltechlibrary/convert_codemeta/archive/v0.0.1.zip",
     "keywords": ["GitHub", "metadata", "software", "codemeta"],
     "maintainer": "https://orcid.org/0000-0001-9266-5146",
-    "programmingLanguage": "Python",
+    "programmingLanguage": "Python"
 }
