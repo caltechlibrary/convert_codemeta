@@ -21,18 +21,6 @@ jobs:
             python -m pip install --upgrade pip setuptools py wheel
             pip install -e .[tests]
             ./run-tests.sh --check-manifest
-  docs-sphinx:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
-      - name: Install Python dependencies
-        run: |
-          pip install --upgrade pip setuptools py wheel
-          pip install -e .
 
   python-tests:
     runs-on: ubuntu-latest

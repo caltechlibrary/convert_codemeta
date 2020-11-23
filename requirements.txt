@@ -1,2 +1,2 @@
-datacite
-pyld
+pandas>=0.25.1
+pyld>=1.0.5
