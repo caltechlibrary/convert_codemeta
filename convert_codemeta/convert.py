@@ -111,12 +111,12 @@ def add_zenodo(new_fields):
         if "Funder" in contributors:
             funding = contributors.pop("Funder")
             new_fields["contributors"] = [{"name": funding["name"], "type": "Funder"}]
-    if "relatedIdentifiers" in new_fields:
+    if "related_identifiers" in new_fields:
         formatted = []
         for item in new_fields["relatedIdentifiers"]:
             for key, value in item.items():
                 formatted.append({"relation": key, "identifier": value})
-        new_fields["relatedIdentifiers"] = formatted
+        new_fields["related_identifiers"] = formatted
 
 
 def customize_zenodo(json):
@@ -171,7 +171,8 @@ def crosswalk(json, from_format, to_format="codemeta"):
         # Nested elements indicated by a . path need to be added manually
         for key in from_context.keys():
             if "." in key:
-                json[from_context[key]["@id"]] = deep_get(json, key)
+                context_key = from_context[key]["@id"]
+                json[context_key] = deep_get(json, key)
     if to_format == "codemeta":
         # codemeta_context = "https://doi.org/10.5063/schema/codemeta-2.0"
         to_context = "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld"
@@ -183,10 +184,11 @@ def crosswalk(json, from_format, to_format="codemeta"):
         for key in to_context.keys():
             if "." in key:
                 context_key = to_context[key]["@id"].split(":")[1]
-                value = json[context_key]
-                deep_put(new_fields, key, value)
-                # We don't need the old value
-                json.pop(context_key)
+                if context_key in json:
+                    value = json[context_key]
+                    deep_put(new_fields, key, value)
+                    # We don't need the old value
+                    json.pop(context_key)
     json["@context"] = from_context
     # Elements from formats that need logic are added manually
     if from_format == "bio.tools":
