@@ -113,7 +113,7 @@ def add_zenodo(new_fields):
             new_fields["contributors"] = [{"name": funding["name"], "type": "Funder"}]
     if "related_identifiers" in new_fields:
         formatted = []
-        for item in new_fields["relatedIdentifiers"]:
+        for item in new_fields["related_identifiers"]:
             for key, value in item.items():
                 formatted.append({"relation": key, "identifier": value})
         new_fields["related_identifiers"] = formatted
