@@ -6,7 +6,7 @@
     "codeRepository": "https://github.com/caltechlibrary/convert_codemeta",
     "issueTracker": "https://github.com/caltechlibrary/convert_codemeta/issues",
     "license": "https://data.caltech.edu/license",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "author": [
         {
             "@type": "Person",
@@ -18,7 +18,7 @@
         }
     ],
     "developmentStatus": "active",
-    "downloadUrl": "https://github.com/caltechlibrary/convert_codemeta/archive/v0.0.1.zip",
+    "downloadUrl": "https://github.com/caltechlibrary/convert_codemeta/archive/v0.2.0.zip",
     "keywords": ["GitHub", "metadata", "software", "codemeta"],
     "maintainer": "https://orcid.org/0000-0001-9266-5146",
     "programmingLanguage": "Python"
