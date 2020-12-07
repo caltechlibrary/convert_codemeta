@@ -1,7 +1,7 @@
 from pyld import jsonld
 import pyld.documentloader.requests
 import pandas as pd
-import csv, os, json, copy
+import csv, os, json, copy, requests
 
 
 def deep_get(dikt, path):
@@ -159,6 +159,16 @@ def customize_zenodo(json):
     if "codemeta:maintainer" in json:
         # Don't know how to map
         json.pop("codemeta:maintainer")
+    if "license" in json:
+        # Need to confirm the license is available in Zenodo
+        # This is an exact match - could be improved with fuzzy match
+        license_api = "https://zenodo.org/api/licenses/?&size=1000"
+        zenodo_data = requests.get(license_api).json()["hits"]["hits"]
+        licenses = []
+        for license in zenodo_data:
+            licenses.append(license["id"])
+        if json["license"] not in licenses:
+            json.pop("license")
 
 
 def crosswalk(json, from_format, to_format="codemeta"):

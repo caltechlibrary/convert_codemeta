@@ -1,0 +1,37 @@
+{
+  "@context": "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld",
+  "@type": "SoftwareSourceCode",
+  "description": "Automated Metadata Service: Manage metadata from different sources.",
+  "name": "ames",
+  "codeRepository": "https://github.com/caltechlibrary/ames",
+  "issueTracker": "https://github.com/caltechlibrary/ames/issues",
+  "license": "BSD-3-Clause",
+  "version": "0.7.1",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Thomas E",
+      "familyName": "Morrell",
+      "affiliation": "Caltech Library",
+      "email": "tmorrell@caltech.edu",
+      "@id": "https://orcid.org/0000-0001-9266-5146"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Robert",
+      "familyName": "Doiel",
+      "affiliation": "Caltech Library",
+      "email": "rsdoiel@caltech.edu",
+      "@id": "https://orcid.org/0000-0003-0900-6903"
+    }
+  ],
+  "developmentStatus": "active",
+  "downloadUrl": "https://github.com/caltechlibrary/ames/archive/v0.6.0.zip",
+  "keywords": [
+    "GitHub",
+    "metadata",
+    "software"
+  ],
+  "maintainer": "https://orcid.org/0000-0001-9266-5146",
+  "programmingLanguage": "Python"
+}

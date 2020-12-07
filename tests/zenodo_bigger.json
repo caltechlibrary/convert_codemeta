@@ -1,0 +1,39 @@
+{
+  "creators": [
+    {
+      "orcid": "0000-0001-9266-5146",
+      "affiliation": "Caltech Library",
+      "name": "Morrell, Thomas E"
+    },
+    {
+      "orcid": "0000-0003-0900-6903",
+      "affiliation": "Caltech Library",
+      "name": "Doiel, Robert"
+    }
+  ],
+  "description": "Automated Metadata Service: Manage metadata from different sources.",
+  "keywords": [
+    "GitHub",
+    "metadata",
+    "software",
+    "Python",
+    "Development Status: active"
+  ],
+  "license": "BSD-3-Clause",
+  "version": "0.7.1",
+  "title": "ames",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/caltechlibrary/ames"
+    },
+    {
+      "relation": "isIdenticalTo",
+      "identifier": "https://github.com/caltechlibrary/ames/archive/v0.6.0.zip"
+    },
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/caltechlibrary/ames/issues"
+    }
+  ]
+}

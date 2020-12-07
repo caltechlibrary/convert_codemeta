@@ -16,7 +16,6 @@
     "Python",
     "Development Status: active"
   ],
-  "license": "https://spdx.org/licenses/MIT.html",
   "version": "1.0",
   "title": "genome_size_vs_protein_count",
   "related_identifiers": [
