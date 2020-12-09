@@ -7,7 +7,8 @@ def validate_codemeta(json):
     try:
         context = json["@context"]
     except:
-        raise ValueError
+        print("Not a jsonld file")
+        return False
     if context == "https://doi.org/10.5063/schema/codemeta-2.0":
         # Temp replacement for https resolution issues for schema.org
         context = "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld"
