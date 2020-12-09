@@ -8,6 +8,10 @@ def validate_codemeta(json):
         context = json["@context"]
     except:
         raise ValueError
+    if context == "https://doi.org/10.5063/schema/codemeta-2.0":
+        # Temp replacement for https resolution issues for schema.org
+        context = "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld"
+        json["@context"] = context
     cp = copy.deepcopy(json)
     # Expand and contract to check mapping
     cp = jsonld.expand(cp)

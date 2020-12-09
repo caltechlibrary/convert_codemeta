@@ -1,5 +1,5 @@
 {
-  "@context": "https://raw.githubusercontent.com/caltechlibrary/convert_codemeta/main/codemeta.jsonld",
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "description": "Automated Metadata Service: Manage metadata from different sources.",
   "name": "ames",
