@@ -1,6 +1,8 @@
 Convert Codemeta
 =====================================================
 
+Will be replaced by improved crosswalks and https://github.com/SciCodes/somef-core
+
 Python utility for converting and validating codemeta.json files using the codemeta crosswalk
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg?style=flat-square)](https://choosealicense.com/licenses/bsd-3-clause)
